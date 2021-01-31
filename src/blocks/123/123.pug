@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (123)
+
+mixin 123(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +123('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' 123--' + modsList[i].trim();
+      }
+    }
+
+  .123(class=allMods)&attributes(attributes)
+    .123__inner
+      block

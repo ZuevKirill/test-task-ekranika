@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (blocknam6752e)
+
+mixin blocknam6752e(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +blocknam6752e('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' blocknam6752e--' + modsList[i].trim();
+      }
+    }
+
+  .blocknam6752e(class=allMods)&attributes(attributes)
+    .blocknam6752e__inner
+      block
